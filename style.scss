@@ -1,0 +1,323 @@
+// General Variables
+$width-small:  480px !default;
+$width-medium: 768px !default;
+$width-large:  1200px !default;
+
+$navigation-height: 50px !default;
+
+$padding-small:  25px !default;
+$padding-medium: 50px !default;
+$padding-large:  100px !default;
+
+// Fonts
+$fonts:         sans-serif, Helmet, Freesans !default;
+$font_normal:  'latoregular', $fonts !default;
+$font_p:       'latoregular', $fonts !default;  // Paragraphs
+$font_a:       'latoregular', $fonts !default;  // Links
+$font_h:       'latoregular', $fonts !default;  // Headings
+$font_q:       'latoregular', $fonts !default;  // Quotes
+$font_bold:    'latobold', $fonts !default;
+$font_italic:  'latoitalic', $fonts !default;
+$font_light:   'latolight', $fonts !default;
+$font_brand:   'latoregular', $fonts !default;
+
+$font_p_lineheight: 200% !default;
+$font_h_lineheight: 100% !default;
+$font_q_lineheight: 200% !default;
+
+// Media Query Ranges
+$smallest-screen-up: 1px !default;
+$small-screen:       480px !default;
+$small-screen-up:    481px !default;
+$medium-screen:      768px !default;
+$medium-screen-up:   769px !default;
+$large-screen:       1200px !default;
+$large-screen-up:    1201px !default;
+
+$smallest-and-up: "screen and (min-width : #{$smallest-screen-up})" !default;
+$small-and-down:  "screen and (max-width : #{$small-screen})" !default;
+$small-and-up:    "screen and (min-width : #{$small-screen-up})" !default;
+$medium-and-down: "screen and (max-width : #{$medium-screen})" !default;
+$medium-only:     "screen and (min-width : #{$small-screen-up}) and (max-width : #{$medium-screen})" !default;
+$medium-and-up:   "screen and (min-width : #{$medium-screen-up})" !default;
+$large-and-down:  "screen and (max-width : #{$large-screen})" !default;
+$large-and-up:    "screen and (min-width : #{$large-screen-up})" !default;
+
+// Grid Variables
+$num-cols: 12 !default;
+
+$cWhite:        #FFFFFF;
+$cGrey:         #eeeeef;
+$cGreyDark:     #777777;
+$cBlack:        #0f1a23;
+$cBlackLight:   #273139;
+$cBlackLight2:  #333333;
+$cBlackLight3:  #373a3c;
+$cRed:          #cf434b;
+$cBlue:         #3e5c9a;
+$cGreen:        #c9dd03;
+$cGreen2:       #73b639;
+$cYellow:       #feb90d;
+$cOrange:       #fc7a00;
+
+$cPrimary:      $cGreen;
+$cAccent:       $cOrange;
+$cText:         $cBlack;
+$cBackground:   $cGrey;
+
+$cAlert:        $cRed;
+$cWarning:      $cYellow;
+$cSuccess:      $cGreen;
+$cInfo:         $cBlue;
+
+.bg {
+    &-green {
+        color: $cWhite;
+        background-color: $cGreen2;
+    }
+
+    &-orange {
+        color: $cWhite;
+        background-color: $cOrange;
+    }
+
+    &-blue {
+        color: $cWhite;
+        background-color: $cBlue;
+    }
+
+    &-red  {
+        color: $cWhite;
+        background-color: $cRed;
+    }
+
+    &-black  {
+        color: $cWhite;
+        background-color: $cBlackLight;
+    }
+
+    &-grey-dark  {
+        color: $cWhite;
+        background-color: $cGreyDark;
+    }
+}
+
+@import "normalize.scss";
+
+* {
+    &,
+    &:before,
+    &:after {
+        -moz-box-sizing:border-box;
+        box-sizing: inherit;
+    }
+}
+
+html,
+body {
+    height: 100%;
+}
+
+html {
+    box-sizing: border-box;
+    position: relative;
+    font-size: 62.5%;
+}
+
+body {
+    position: relative;
+    color: $cText;
+    background-color: $cGrey;
+    font-family: $fonts;
+    font-size: 16px;
+    overflow-x: hidden;
+}
+
+header {
+    padding: 25px;
+    width: 100%;
+
+    img {
+        display: inline-block;
+        width: 128px;
+        vertical-align: middle;
+    }
+
+    p {
+        color: $cBlackLight3;
+        margin: 0;
+        margin-left: 25px;
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 2em;
+        font-family: $font-light;
+        font-weight: 300;
+    }
+}
+
+footer {
+    width: 100%;
+
+    img {
+        width: 100%;
+    }
+}
+
+#img {
+    &-nav {
+        &-top {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        &-left {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            height: 100%;
+            width: auto;
+        }
+    }
+
+    &-chat {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        bottom: 0;
+    }
+}
+
+#dynamic {
+    position: absolute;
+    background-color: $cWhite;
+    padding: 25px;
+
+    .row {
+        &:before,
+        &:after {
+            content: " ";
+            display: table;
+        }
+
+        &:after {
+            clear: both;
+        }
+
+        margin-bottom: 5%;
+
+        > div {
+            float: left;
+            width: 20%;
+            margin: 0 2.5%;
+            padding: 50px 25px;
+            text-align: center;
+
+            i {
+                font-size: 3em;
+            }
+
+            h1 {
+                margin: 0;
+                font-family: $font-light;
+                font-weight: 300;
+            }
+        }
+    }
+}
+
+.center {
+    &-v {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    &-h {
+        left: 0;
+        right: 0;
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+
+.box {
+    width: 100%;
+    max-width: 250px;
+
+    header {
+        padding: 25px;
+        text-align: center;
+
+        h1 {
+            margin: 0;
+            font-family: $font-light;
+            font-weight: 300;
+        }
+    }
+
+    &-dark {
+        background-color: $cBlack;
+    }
+
+    &-accent {
+        header,
+        button {
+            color: $cWhite;
+            background-color: $cAccent;
+        }
+    }
+
+    &-fields {
+        padding: 35px 25px;
+
+        input {
+            margin-bottom: 25px;
+            padding: 10px;
+            width: 100%;
+            border: none;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &-footer {
+        padding: 0 25px 25px;
+        text-align: right;
+
+        button {
+            padding: 0 20px;
+
+            i {
+                font-size: 2em;
+            }
+        }
+    }
+}
+
+button {
+    border: none;
+    padding: 10px 20px;
+
+    i,
+    span {
+        vertical-align: middle;
+    }
+
+    i {
+        &:before {
+            vertical-align: top;
+        }
+    }
+}
+
+#login-wrapper {
+    position: relative;
+    display: block;
+    width: 100%;
+    min-height: 500px;
+}
